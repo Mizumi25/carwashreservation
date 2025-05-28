@@ -13,6 +13,22 @@ Route::get('/healthz', function () {
 });
 
 
+Route::get('/dbtest', function () {
+    try {
+        \DB::connection()->getPdo();
+        return '✅ Connected to DB: ' . \DB::connection()->getDatabaseName();
+    } catch (\Exception $e) {
+        return '❌ DB Error: ' . $e->getMessage();
+    }
+});
+
+Route::get('/error-log', function () {
+    return response()->file(storage_path('logs/laravel.log'));
+});
+
+
+
+
 Route::get('/logout', Logout::class)->name('logout');
 
 
