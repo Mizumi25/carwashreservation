@@ -21,8 +21,8 @@ RUN composer install --no-dev --optimize-autoloader
 # Prepare Laravel app (storage link and cache config/routes/views)
 RUN php artisan storage:link && php artisan config:cache && php artisan route:cache && php artisan view:cache
 
-# Expose port 9000 to communicate with the web server (like Nginx)
-EXPOSE 9000
+# Expose port 8080 (default fallback)
+EXPOSE 8080
 
-# Start PHP-FPM server
-CMD ["php", "artisan", "serve", "--host=0.0.0.0", "--port=8080"]
+# Start Laravel's built-in server using $PORT env variable dynamically
+CMD php artisan serve --host=0.0.0.0 --port=${PORT:-8080}
