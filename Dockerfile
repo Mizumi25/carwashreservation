@@ -25,4 +25,4 @@ RUN php artisan storage:link && php artisan config:cache && php artisan route:ca
 EXPOSE 9000
 
 # Start PHP-FPM server
-CMD ["php-fpm"]
+CMD ["php", "artisan", "serve", "--host=0.0.0.0", "--port=8080"]
