@@ -22,7 +22,7 @@ RUN composer install --no-dev --optimize-autoloader
 RUN php artisan storage:link && php artisan config:cache && php artisan route:cache && php artisan view:cache
 
 # Expose port 8080 (default fallback)
-EXPOSE 8080
+EXPOSE 10000
 
 # Start Laravel's built-in server using $PORT env variable dynamically
 CMD php artisan serve --host=0.0.0.0 --port=${PORT:-8080}
