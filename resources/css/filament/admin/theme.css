@@ -1,0 +1,15 @@
+@import '/vendor/filament/filament/resources/css/theme.css';
+
+@config 'tailwind.config.js';
+
+:root {
+    --f-blue-100: #ccf2ff; /* Light Blue */
+    --f-blue-200: #99d6ff; /* Medium Light Blue */
+    --f-blue-300: #66b3ff; /* Blue */
+    --f-blue-400: #3399ff; /* Medium Blue */
+    --f-blue-500: #007acc; /* Bright Blue */
+    --f-blue-600: #006bb3; /* Darker Blue */
+    --f-blue-700: #00509e; /* Dark Blue */
+    --f-blue-800: #003366; /* Very Dark Blue */
+    --f-blue-900: #001933; /* Almost Black Blue */
+}
