@@ -38,7 +38,8 @@ RUN php artisan key:generate --no-interaction || true \
     && php artisan view:cache
 
 # Expose the port that Render assigns
-EXPOSE $PORT
+EXPOSE 8080
 
 # Start Laravel's built-in server
-CMD php artisan serve --host=0.0.0.0 --port=$PORT
+CMD ["php", "artisan", "serve", "--host=0.0.0.0", "--port=8080"]
+
