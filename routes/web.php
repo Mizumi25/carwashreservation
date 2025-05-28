@@ -6,6 +6,10 @@ use App\Models\Payment;
 use App\Livewire\Actions\Logout;
 
 Route::view('/', 'welcome')->name('welcome');
+Route::get('/healthz', function () {
+    return response()->json(['status' => 'ok']);
+});
+
 
 Route::get('/logout', Logout::class)->name('logout');
 
